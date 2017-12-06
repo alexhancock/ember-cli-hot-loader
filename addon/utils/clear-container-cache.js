@@ -15,17 +15,17 @@ function clear (context, owner, name) {
   }
   if (owner.__container__) {
     clearIfHasProperty(owner.__container__.cache, name);
-    clearIfHasProperty(owner.__container__.factoryCache, name);
+    clearIfHasProperty(owner.__container__.factoryManagerCache, name);
     clearIfHasProperty(owner.__registry__._resolveCache, name);
     clearIfHasProperty(owner.__registry__._failCache, name);
 
     clearIfHasProperty(owner.base.__container__.cache, name);
-    clearIfHasProperty(owner.base.__container__.factoryCache, name);
+    clearIfHasProperty(owner.base.__container__.factoryManagerCache, name);
     clearIfHasProperty(owner.base.__registry__._resolveCache, name);
     clearIfHasProperty(owner.base.__registry__._failCache, name);
   } else {
     clearIfHasProperty(context.container.cache, name);
-    clearIfHasProperty(context.container.factoryCache, name);
+    clearIfHasProperty(context.container.factoryManagerCache, name);
     clearIfHasProperty(context.container._registry._resolveCache, name);
     clearIfHasProperty(context.container._registry._failCache, name);
     // NOTE: the app's __container__ is the same as context.container. Not needed:
